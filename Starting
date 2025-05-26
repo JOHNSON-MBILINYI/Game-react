@@ -1,0 +1,10 @@
+import React, { useState } from 'react'; import { Button } from '@/components/ui/button';
+
+export default function SimpleGame() { const [score, setScore] = useState(0); const [message, setMessage] = useState('Click the button as fast as you can!');
+
+const handleClick = () => { setScore(score + 1); if ((score + 1) % 10 === 0) { setMessage('Great job! Keep going!'); } else { setMessage('Keep clicking!'); } };
+
+const handleReset = () => { setScore(0); setMessage('Click the button as fast as you can!'); };
+
+return ( <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 to-pink-500 p-4"> <h1 className="text-4xl font-bold text-white mb-4">Simple Clicker Game</h1> <p className="text-lg text-white mb-2">Score: {score}</p> <p className="text-md text-white mb-4">{message}</p> <Button className="mb-2 px-6 py-3 text-lg bg-yellow-400 hover:bg-yellow-300 rounded-2xl shadow-lg" onClick={handleClick}> Click Me! </Button> <Button className="px-4 py-2 bg-gray-300 hover:bg-gray-200 rounded-xl shadow" onClick={handleReset}> Reset </Button> </div> ); }
+

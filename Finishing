@@ -1,7 +1,6 @@
 import React, { useState } from 'react'; import { Button } from '@/components/ui/button';
 
 export default function SimpleGame() { const [score, setScore] = useState(0); const [message, setMessage] = useState('Click the button as fast as you can!');
-
 const handleClick = () => { setScore(score + 1); if ((score + 1) % 10 === 0) { setMessage('Great job! Keep going!'); } else { setMessage('Keep clicking!'); } };
 
 const handleReset = () => { setScore(0); setMessage('Click the button as fast as you can!'); };
